@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSSY MOON B. ATO | 2026 Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#about" class="logo">ChelssyAto.</a>
+      <nav class="nav-links">
+        <a href="#about" class="nav-item active">About Me</a>
+        <a href="#works" class="nav-item">My Works</a>
+        <a href="#contacts" class="nav-item">Contacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    
+    <!-- About Me Section -->
+    <section id="about" class="section">
+      <div class="card about-card">
+        <div class="profile-header">
+          <div class="avatar-wrapper">
+            <!-- REPLACE THE IMAGE URL BELOW WITH YOUR PROFILE PICTURE -->
+            <img src="/images/myphoto.jpg" alt="Profile Picture" class="avatar">
+            <span class="status-indicator" title="Available for work"></span>
+          </div>
+          <div class="profile-title">
+            <h1>Chelssy Ato</h1>
+            <p class="subtitle">IT Student</p>
+          </div>
+        </div>
+
+        <div class="bio">
+          <p> Hello World! I am a passionate IT student with a keen interest in web development and design.</p>
+        </div>
+
+       
+    </section>
+
+    <!-- My Works Section -->
+    <section id="works" class="section">
+      <h2 class="section-heading">My Works</h2>
+      <div class="works-grid">
+        
+        <!-- PROJECT 1: Image Link to Figma -->
+        <div class="work-card">
+          <!-- Replace href with your Figma file URL and the img src with your project preview image -->
+          <a href="https://www.figma.com/design/wff3B8CzPUowC6PI20s2V0/DESIGN-SYSTEM-1?node-id=0-1&t=V8xJFqN600Gxmcs3-1 target="_blank" rel="noopener noreferrer" class="work-img-link" title="Open project in Figma">
+            <img src="/images/Screenshot 2026-11-06 144712.png" class="work-img">
+            <div class="img-overlay">
+              <span><i class="fa-brands fa-figma"></i> Open in Figma</span>
+            </div>
+          </a>
+          <div class="work-info">
+            <h3>Minimalist Dashboard</h3>
+            <p>Clean design system built for productivity tracking and dynamic theme switching.</p>
+            <div class="work-tags">
+              <span>Design system</span>
+              <span>1</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: Image Link to Figma -->
+        <div class="work-card">
+          <!-- Replace href with your Figma file URL and the img src with your project preview image -->
+          <a href="https://www.figma.com/design/a3Y2IOvCoGwZfaBJkA2Zyj/DESIGN-SYSTEM-2?node-id=0-1&t=oiFq80EHU5Az0xjD-1" target="_blank" rel="noopener noreferrer" class="work-img-link" title="Open project in Figma">
+            <img src="/images/ss.jpeg.png">
+            <div class="img-overlay">
+              <span><i class="fa-brands fa-figma"></i> Open in Figma</span>
+            </div>
+          </a>
+          <div class="work-info">
+            <h3>Analytics Web App</h3>
+            <p>Interactive data visualization app with custom light & dark accent options.</p>
+            <div class="work-tags">
+              <span>Design system</span>
+              <span>2</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="section">
+      <h2 class="section-heading">Contacts</h2>
+      <div class="card contact-card">
+        <p>Let's collaborate on something great together or just say hi!</p>
+        
+        <div class="contact-actions">
+          <!-- REPLACE WITH YOUR EMAIL ADDRESS -->
+          <a href="mailto:chelssy.ato@urios.edu.ph" class="btn btn-primary">
+            <i class="fa-regular fa-envelope"></i> Send Email
+          </a>
+          <button class="btn btn-secondary" onclick="copyEmail(this)">
+            <i class="fa-regular fa-copy"></i> Copy Email
+          </button>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/cutiesising-cell" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.facebook.com/chelssymoon.ato" class="social-icon" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <p>CHELSSY MOON B. ATO - COMP 101 - COMPUTER FUNDAMENTALS</p>
+    <P class="copyright">© 2026 Chelssy Ato. All rights reserved.</P>
+  </footer>
+
+  <script>
+    // Copy Email Function
+    function copyEmail(button) {
+      const email = 'chelssy.ato@urios.edu.ph';
+      navigator.clipboard.writeText(email).then(() => {
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+        button.classList.add('copied');
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // ScrollSpy active header highlights
+    const sections = document.querySelectorAll('.section');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href').includes(current)) {
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
